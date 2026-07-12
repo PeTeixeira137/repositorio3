@@ -3,5 +3,5 @@ export interface OrdemServico {
     nomeCliente: string;
     modeloAparelho: string;
     defeito: string;
-    status: 'aberta' | 'em andamento' | 'concluida';
+    status: 'aberto' | 'em andamento' | 'concluida';
 }

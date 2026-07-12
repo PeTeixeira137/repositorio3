@@ -12,7 +12,7 @@ export function App() {
       nomeCliente: 'Pedro Farace',
       modeloAparelho: 'Samsung A22 5G',
       defeito: 'Tela quebrada',
-      status: 'aberta'
+      status: 'aberto'
     },
     {
       id: 2,

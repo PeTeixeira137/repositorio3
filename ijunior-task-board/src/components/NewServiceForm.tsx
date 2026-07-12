@@ -10,6 +10,23 @@ export function NewServiceForm({ onAddServico }: NewServiceFormProps) {
     const [modeloAparelho, setModeloAparelho] = useState('');
     const [defeito, setDefeito] = useState('');
 
+    function HandleSubmit(event: React.FormEvent) {
+        event.preventDefault();
+
+        onAddServico({
+            id: Date.now(),
+            nomeCliente,
+            modeloAparelho,
+            defeito,
+            status: 'aberto'
+        });
+
+        // Limpar os campos do formulário
+        setNomeCliente('');
+        setModeloAparelho('');
+        setDefeito('');
+    }
+
     return (
         <form onSubmit={HandleSubmit} className="bg-white shadow-md rounded-lg p-4 mb-4">
             <input name="nomeCliente" value={nomeCliente} onChange={(e) => setNomeCliente(e.target.value)} placeholder="Nome do Cliente" className="border p-2 mb-2 w-full" />
