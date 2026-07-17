@@ -20,9 +20,9 @@ export const NewClientForm = ({ onCreateClient }: NewClientFormProps) => {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            <inputValue={name} onChange={(e) => setName(e.target.value)} placeholder="Nome" className="border p-2 rounded w-full" required />
-            <inputValue={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="border p-2 rounded w-full" required />
-            <inputValue={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Telefone" className="border p-2 rounded w-full" required />
+            <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nome" className="border p-2 rounded w-full" required />
+            <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="border p-2 rounded w-full" required />
+            <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Telefone" className="border p-2 rounded w-full" required />
             <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Criar Cliente</button>
         </form>);
 };

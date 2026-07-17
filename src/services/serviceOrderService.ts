@@ -1,5 +1,5 @@
 import { api } from './api';
-import { ServiceOrder, CreateServiceOrderData } from '../types';
+import type { ServiceOrder, CreateServiceOrderData } from '../types';
 
 export async function getAllServiceOrders(): Promise<ServiceOrder[]> {
     const response = await api.get<ServiceOrder[]>('/service-orders');
