@@ -16,6 +16,7 @@ function getStatusClasses(status: ServiceOrder['status']): string {
     if (status === 'done') {
         return 'bg-green-500 text-white';
     }
+    return '';
 }
 
 export const ServiceCard = ({ client, serviceOrders, onDeleteServiceOrder }: ServiceCardProps) => {
