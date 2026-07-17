@@ -1,37 +1,19 @@
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router';
+import { Header } from './components/Header';
 import { DashboardPage } from './pages/DashboardPage';
 import { ClientsPage } from './pages/ClientsPage';
 import { ServiceOrdersPage } from './pages/ServiceOrdersPage';
-import { Outlet } from 'react-router';
-import { Link, useNavigate } from 'react-router';
-
-const Menu = () => {
-  return (
-    <nav>
-      <Link to="/">Dashboard</Link>
-      <Link to="/clients">Clientes</Link>
-      <Link to="/service-orders">Ordens de Serviço</Link>
-    </nav>
-  );
-};
 
 const MainLayout = () => {
   return (
     <div>
-      <header className="p-4 bg-gray-800 text-white">
-        <h1>iRepair</h1>
-        <nav>
-          <Link to="/">Dashboard</Link>
-          <Link to="/clients">Clientes</Link>
-        </nav>
-      </header>
+      <Header />
       <main className="p-6">
-        <Outlet /> {/* A página filha aparece aqui */}
+        <Outlet />
       </main>
     </div>
   );
 };
-
 
 const App = () => {
   return (
