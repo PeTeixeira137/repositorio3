@@ -44,7 +44,7 @@ export const ClientsPage = () => {
     return (
         <div>
             {error && <p className="text-red-500 mb-2">{error}</p>}
-            <NewClientForm onCreate={handleCreate} />
+            <NewClientForm onCreateClient={handleCreate} />
             {clients.map((c) => (
                 <div key={c.id} className="bg-white shadow-md rounded-lg p-4 mb-2 flex justify-between items-center">
                     <span>{c.name} — {c.email}</span>

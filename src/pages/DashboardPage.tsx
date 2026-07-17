@@ -30,7 +30,7 @@ export const DashboardPage = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {orders.map((o) => (
-                <ServiceCard key={o.id} serviceOrder={o} client={clients.find((c) => c.id === o.client_id)} />
+                <ServiceCard key={o.id} serviceOrders={[o]} client={clients.find((c) => c.id === o.client_id)} onDeleteServiceOrder={() => { }} />
             ))}
         </div>
     );
