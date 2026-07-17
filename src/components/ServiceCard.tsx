@@ -30,7 +30,7 @@ export const ServiceCard = ({ client, serviceOrders, onDeleteServiceOrder }: Ser
                         <p className="text-sm">Status: {order.status}</p>
                         <button
                             onClick={() => onDeleteServiceOrder(order.id)}
-                            className="mt-2 bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600">
+                            className="mt-2 bg-orange-500 hover:bg-orange-600 text-white py-1 px-2 rounded">
                             Delete
                         </button>
                     </div>
