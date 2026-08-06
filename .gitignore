@@ -160,4 +160,8 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
->>>>>>> origin/desenvolvimento
+# Ferramentas de IA no editor
+.claude/
+.windsurf/
+.agents/
+skills-lock.json
