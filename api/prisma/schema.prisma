@@ -10,18 +10,12 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url = env(DATABASE_URL)
 }
 
 model User {
   id       Int    @id @default(autoincrement())
   email    String @unique
   password String
-}
-
-generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
 }
 
 model Client {
@@ -34,3 +28,12 @@ model Client {
   serviceOrders ServiceOrder[]
 }
 
+model ServiceOrder {
+  id         Int      @id @default(autoincrement())
+  client_id  Int
+  device     String
+  issue      String
+  status     String   @default("open")
+  created_at DateTime @default(now())
+  client     Client   @relation(fields: [client_id], references: [id])
+}
