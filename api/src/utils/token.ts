@@ -1,11 +1,4 @@
 import jwt from 'jsonwebtoken'
-
-interface TokenPayload {
-    id: number
-    email: string
-    iat: number
-    exp: number
-}
 interface TokenPayload {
     id: number
     email: string
