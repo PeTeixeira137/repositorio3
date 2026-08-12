@@ -164,3 +164,6 @@ vite.config.ts.timestamp-*
 .windsurf/
 .agents/
 skills-lock.json
+
+
+client/.env
