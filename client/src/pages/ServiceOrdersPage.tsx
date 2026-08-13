@@ -50,9 +50,13 @@ export const ServiceOrdersPage = () => {
             {error && <p className="text-red-500 mb-2">{error}</p>}
             <NewServiceOrderForm clients={clients} onCreateServiceOrder={handleCreate} />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {orders.map((o) => (
-                    <ServiceCard key={o.id} serviceOrders={[o]} client={clients.find((c) => c.id === o.client_id)} onDeleteServiceOrder={handleDelete} />
-                ))}
+                {orders.map((o) => {
+                    const client = clients.find((c) => c.id === o.client_id);
+                    if (!client) return null; // cliente pode ter sido removido
+                    return (
+                        <ServiceCard key={o.id} serviceOrders={[o]} client={client} onDeleteServiceOrder={handleDelete} />
+                    );
+                })}
             </div>
         </div>
     );

@@ -9,13 +9,12 @@ interface NewServiceOrderFormProps {
 export const NewServiceOrderForm = ({ clients, onCreateServiceOrder }: NewServiceOrderFormProps) => {
     const [clientId, setClientId] = useState("");
     const [device, setDevice] = useState("");
-    const [status, setStatus] = useState("");
     const [issue, setIssue] = useState("");
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
         if (!clientId) return;
-        onCreateServiceOrder({ clientId: Number(clientId), device, issue, status: "open" });
+        onCreateServiceOrder({ client_id: Number(clientId), device, issue, status: "open" });
         setClientId("");
         setDevice("");
         setIssue("");
