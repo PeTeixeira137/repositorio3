@@ -10,7 +10,7 @@ interface AuthContextType {
     user: Usuario | null
     isAuthenticated: boolean
     isLoading: boolean
-    login: (email: string, senha: string) => Promise<void>
+    login: (email: string, password: string) => Promise<void>
     logout: () => Promise<void>
 }
 
@@ -21,14 +21,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         api.get('/auth/me')
-            .then(res => setUser(res.data.usuario))
+            .then(res => setUser(res.data.user))
             .catch(() => setUser(null))
             .finally(() => setIsLoading(false))
     }, [])
 
-    async function login(email: string, senha: string) {
-        const response = await api.post('/auth/login', { email, senha })
-        setUser(response.data.usuario)
+    async function login(email: string, password: string) {
+        const response = await api.post('/auth/login', { email, password })
+        setUser(response.data.user)
     }
 
     async function logout() {
