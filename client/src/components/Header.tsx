@@ -1,9 +1,5 @@
 import { Link } from "react-router";
 
-const linkClasses = ({ isActive }: { isActive: boolean }): string => {
-    return isActive ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-gray-200";
-};
-
 export const Header = () => {
     return (
         <header className="bg-gray-800 text-white p-4">

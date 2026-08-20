@@ -13,7 +13,7 @@ export const NewClientForm = ({ onCreateClient }: NewClientFormProps) => {
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
-        onCreateClient({ name, email, phone });
+        onCreateClient({ name, email, phone, address });
         setName("");
         setEmail("");
         setPhone("");
